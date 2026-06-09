@@ -14,8 +14,8 @@
  */
 
 export const siteConfig = {
-  name: "System.agent",
-  legalName: "System.agent",
+  name: "System Agency Solutions",
+  legalName: "System Agency Solutions",
   tagline: "Tu negocio vende y responde solo, las 24 horas.",
   description:
     "System.agent le da a tu concesionaria una web profesional, un agente de IA que atiende WhatsApp, Instagram y Messenger como un humano, y un panel donde ves cada lead, conversación y venta.",

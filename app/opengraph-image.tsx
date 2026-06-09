@@ -16,9 +16,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#0a0a0b",
-          backgroundImage: "linear-gradient(135deg, #2b2b2f 0%, #0a0a0b 55%)",
-          color: "#ededf2",
+          backgroundColor: "#050505",
+          backgroundImage: "linear-gradient(135deg, #0a1f47 0%, #050505 55%)",
+          color: "#f5f5f5",
           fontFamily: "sans-serif",
         }}
       >
@@ -28,20 +28,21 @@ export default function OpengraphImage() {
               width: 72,
               height: 72,
               borderRadius: 20,
-              backgroundImage: "linear-gradient(135deg, #3f3f46, #a1a1aa)",
+              backgroundImage: "linear-gradient(135deg, #b5b5b5, #4a4a4a)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 38,
               fontWeight: 700,
               color: "#fff",
+              boxShadow: "0 0 30px rgba(20, 107, 255, 0.55)",
             }}
           >
             SA
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 700 }}>
             <span>System</span>
-            <span style={{ color: "#d4d4d8" }}>.agent</span>
+            <span style={{ color: "#53c8ff" }}>.agent</span>
           </div>
         </div>
 
@@ -49,7 +50,7 @@ export default function OpengraphImage() {
           Tu negocio vende y responde solo, las 24 horas.
         </div>
 
-        <div style={{ fontSize: 32, color: "#a39fb5", marginTop: 32, maxWidth: 880 }}>
+        <div style={{ fontSize: 32, color: "#b8b8b8", marginTop: 32, maxWidth: 880 }}>
           Web + agente de IA omnicanal + CRM para concesionarias.
         </div>
       </div>

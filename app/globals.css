@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
 /* ============================================================
-   IDENTIDAD DE MARCA — System.agent (paleta gris y negro)
-   Cambiá el acento gris en UN solo lugar (estas variables).
+   IDENTIDAD DE MARCA — SYS / System.agent
+   Estética dark · premium · futurista · azul eléctrico.
+   Cambiá la marca en UN solo lugar (estas variables).
    ============================================================ */
 :root {
-  --brand: #e4e4e7;        /* gris plata principal (botones / acentos) */
-  --brand-2: #a1a1aa;      /* gris medio (para gradientes) */
-  --brand-soft: #d4d4d8;   /* gris claro (texto de acento sobre oscuro) */
-  --brand-ink: #0a0a0b;    /* texto oscuro que va ARRIBA del gris claro */
+  /* Acento de marca = azul eléctrico (botones / acentos / gradientes) */
+  --brand: #146bff;        /* azul principal */
+  --brand-2: #0d8bff;      /* azul glow (gradientes) */
+  --brand-soft: #53c8ff;   /* azul highlight (texto de acento sobre oscuro) */
+  --brand-ink: #ffffff;    /* texto que va ARRIBA del azul (botones) */
 
-  /* Base negra/gris premium */
-  --bg: #0a0a0b;
-  --bg-soft: #101012;
-  --surface: #17171a;
-  --text: #ededee;
-  --muted: #a0a0a8;
-  --line: rgba(255, 255, 255, 0.09);
+  /* Escala azul eléctrico completa */
+  --blue-main: #146bff;
+  --blue-glow: #0d8bff;
+  --blue-bright: #00a3ff;
+  --blue-highlight: #53c8ff;
+
+  /* Grises metálicos — elementos premium / logo */
+  --metal-dark: #4a4a4a;
+  --metal-main: #676767;
+  --metal-light: #8a8a8a;
+  --metal-highlight: #b5b5b5;
+
+  /* Base negra profunda */
+  --bg: #050505;           /* fondo principal */
+  --bg-soft: #0d0d0d;      /* fondo secundario / secciones */
+  --surface: #141414;      /* cards / superficies */
+  --text: #f5f5f5;         /* texto principal */
+  --muted: #b8b8b8;        /* texto secundario */
+  --line: #1e1e1e;         /* bordes sutiles */
 }
 
 @theme inline {
@@ -24,6 +38,17 @@
   --color-brand-2: var(--brand-2);
   --color-brand-soft: var(--brand-soft);
   --color-brand-ink: var(--brand-ink);
+
+  --color-blue-main: var(--blue-main);
+  --color-blue-glow: var(--blue-glow);
+  --color-blue-bright: var(--blue-bright);
+  --color-blue-highlight: var(--blue-highlight);
+
+  --color-metal-dark: var(--metal-dark);
+  --color-metal-main: var(--metal-main);
+  --color-metal-light: var(--metal-light);
+  --color-metal-highlight: var(--metal-highlight);
+
   --color-bg: var(--bg);
   --color-bg-soft: var(--bg-soft);
   --color-surface: var(--surface);
@@ -42,11 +67,11 @@
   }
   body {
     background-color: var(--bg);
-    /* Difuminación de negros y grises */
+    /* Halos azul eléctrico difuminados sobre negro profundo */
     background-image:
-      radial-gradient(1100px 620px at 50% -8%, #1d1d20 0%, transparent 60%),
-      radial-gradient(820px 520px at 88% 6%, #161618 0%, transparent 55%),
-      radial-gradient(760px 520px at 8% 34%, #141416 0%, transparent 55%);
+      radial-gradient(1100px 620px at 50% -8%, rgba(20, 107, 255, 0.12) 0%, transparent 60%),
+      radial-gradient(820px 520px at 88% 6%, rgba(13, 139, 255, 0.08) 0%, transparent 55%),
+      radial-gradient(760px 520px at 8% 34%, rgba(0, 163, 255, 0.06) 0%, transparent 55%);
     background-attachment: fixed;
     color: var(--text);
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -55,7 +80,7 @@
   }
   ::selection {
     background: color-mix(in oklab, var(--brand) 55%, transparent);
-    color: var(--brand-ink);
+    color: #fff;
   }
 }
 
@@ -71,7 +96,7 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium tracking-wide text-brand-soft;
+    @apply inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand/[0.08] px-3 py-1.5 text-xs font-medium tracking-wide text-brand-soft;
   }
 
   /* Base compartida de botones (sin referenciar otra clase de componente) */
@@ -81,21 +106,33 @@
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
   }
+  /* Botón principal: gradiente azul eléctrico + glow */
   .btn-primary {
-    @apply bg-brand text-brand-ink shadow-lg shadow-brand/30 hover:brightness-110 hover:shadow-brand/50;
+    background-image: linear-gradient(135deg, var(--blue-main), var(--blue-glow));
+    color: #fff;
+    box-shadow: 0 0 20px rgba(20, 107, 255, 0.45);
+  }
+  .btn-primary:hover {
+    background-image: linear-gradient(135deg, var(--blue-glow), var(--blue-bright));
+    box-shadow: 0 0 35px rgba(13, 139, 255, 0.65);
   }
   .btn-secondary {
-    @apply border border-white/15 bg-white/[0.04] text-text hover:bg-white/10;
+    @apply border border-white/15 bg-white/[0.04] text-text hover:border-brand/40 hover:bg-white/10;
   }
   .btn-ghost {
     @apply text-text hover:text-brand-soft;
   }
 
+  /* Cards premium con sutil glow azul */
   .card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition duration-300;
+    @apply rounded-2xl p-6 backdrop-blur-sm transition duration-300;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: 0 0 40px rgba(20, 107, 255, 0.08);
   }
-  .card-hover {
-    @apply hover:border-brand/40 hover:bg-white/[0.05];
+  .card-hover:hover {
+    border-color: color-mix(in oklab, var(--brand) 45%, transparent);
+    box-shadow: 0 0 50px rgba(20, 107, 255, 0.18);
   }
 
   .h2 {
@@ -104,6 +141,40 @@
   }
   .lead {
     @apply text-lg leading-relaxed text-muted;
+  }
+
+  /* Texto con gradiente azul eléctrico */
+  .text-gradient-blue {
+    background-image: linear-gradient(135deg, var(--blue-highlight), var(--blue-main) 55%, var(--blue-glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glow azul eléctrico para el logo / íconos */
+  .glow-logo {
+    filter:
+      drop-shadow(0 0 6px rgba(20, 107, 255, 0.55))
+      drop-shadow(0 0 14px rgba(13, 139, 255, 0.4));
+  }
+  .glow-logo-strong {
+    filter:
+      drop-shadow(0 0 10px var(--blue-main))
+      drop-shadow(0 0 25px rgba(13, 139, 255, 0.7))
+      drop-shadow(0 0 50px rgba(0, 163, 255, 0.35));
+  }
+
+  /* Línea decorativa con degradado azul */
+  .divider-glow {
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      var(--blue-main),
+      var(--blue-highlight),
+      transparent
+    );
   }
 
   /* Reveal on scroll */
