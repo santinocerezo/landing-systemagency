@@ -2,7 +2,7 @@
  * ============================================================
  *  FUENTE ÚNICA DE VERDAD — System.agent
  *  Cambiá acá los datos de contacto, redes y links.
- *  (El color violeta se cambia en app/globals.css → --brand)
+ *  (El color de acento gris se cambia en app/globals.css → --brand)
  * ============================================================
  *
  *  PENDIENTE de reemplazar por los datos reales:

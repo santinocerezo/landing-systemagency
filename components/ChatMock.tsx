@@ -28,7 +28,7 @@ export default function ChatMock({
     >
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-white/5 bg-[#202c33] px-4 py-3">
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-2 text-sm font-bold text-white">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-2 text-sm font-bold text-brand-ink">
           SA
         </span>
         <div className="leading-tight">

@@ -26,9 +26,9 @@ export default function DemoShowcase() {
               href={siteConfig.demo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block overflow-hidden rounded-xl border border-white/10 bg-[#0b0a12] shadow-2xl shadow-black/40 transition hover:border-brand/40"
+              className="group relative block overflow-hidden rounded-xl border border-white/10 bg-[#0b0b0c] shadow-2xl shadow-black/40 transition hover:border-brand/40"
             >
-              <div className="flex items-center gap-2 border-b border-white/10 bg-[#15131f] px-4 py-3">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-[#161618] px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
                 <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
                 <span className="h-3 w-3 rounded-full bg-[#28c840]" />

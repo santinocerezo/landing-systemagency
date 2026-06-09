@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
 /* ============================================================
-   IDENTIDAD DE MARCA — System.agent
-   Cambiá el violeta en UN solo lugar (estas variables).
-   Cuando tengas el HEX exacto de tus redes, reemplazá --brand.
+   IDENTIDAD DE MARCA — System.agent (paleta gris y negro)
+   Cambiá el acento gris en UN solo lugar (estas variables).
    ============================================================ */
 :root {
-  --brand: #7c3aed;        /* violeta principal */
-  --brand-2: #a855f7;      /* violeta/fucsia secundario (para gradientes) */
-  --brand-soft: #c4b5fd;   /* violeta claro (detalles / texto sobre oscuro) */
-  --brand-ink: #ffffff;    /* texto que va ARRIBA del violeta */
+  --brand: #e4e4e7;        /* gris plata principal (botones / acentos) */
+  --brand-2: #a1a1aa;      /* gris medio (para gradientes) */
+  --brand-soft: #d4d4d8;   /* gris claro (texto de acento sobre oscuro) */
+  --brand-ink: #0a0a0b;    /* texto oscuro que va ARRIBA del gris claro */
 
-  /* Base oscura premium */
-  --bg: #08060f;
-  --bg-soft: #0d0a1a;
-  --surface: #131023;
-  --text: #ededf2;
-  --muted: #a39fb5;
+  /* Base negra/gris premium */
+  --bg: #0a0a0b;
+  --bg-soft: #101012;
+  --surface: #17171a;
+  --text: #ededee;
+  --muted: #a0a0a8;
   --line: rgba(255, 255, 255, 0.09);
 }
 
@@ -43,14 +42,20 @@
   }
   body {
     background-color: var(--bg);
+    /* Difuminación de negros y grises */
+    background-image:
+      radial-gradient(1100px 620px at 50% -8%, #1d1d20 0%, transparent 60%),
+      radial-gradient(820px 520px at 88% 6%, #161618 0%, transparent 55%),
+      radial-gradient(760px 520px at 8% 34%, #141416 0%, transparent 55%);
+    background-attachment: fixed;
     color: var(--text);
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: color-mix(in oklab, var(--brand) 45%, transparent);
-    color: #fff;
+    background: color-mix(in oklab, var(--brand) 55%, transparent);
+    color: var(--brand-ink);
   }
 }
 

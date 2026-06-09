@@ -35,10 +35,10 @@ Casi todo se edita en **un solo lugar**:
 | `social.*` | Links y handle de Instagram / Facebook / LinkedIn (vacíos no se muestran). |
 | `url` | Dominio final del sitio (para SEO / Open Graph). |
 
-### Color de marca (violeta) → [`app/globals.css`](app/globals.css)
+### Color de marca (gris) → [`app/globals.css`](app/globals.css)
 
 Cambiá las variables al principio del archivo (`--brand`, `--brand-2`, `--brand-soft`). Todo el sitio
-se actualiza solo. Si cambiás el violeta, actualizá también:
+se actualiza solo. Si cambiás el acento, actualizá también:
 - el `primary_color` del embed de Calendly en [`components/BookingSection.tsx`](components/BookingSection.tsx),
 - los colores del favicon en [`app/icon.svg`](app/icon.svg) y del OG en [`app/opengraph-image.tsx`](app/opengraph-image.tsx).
 

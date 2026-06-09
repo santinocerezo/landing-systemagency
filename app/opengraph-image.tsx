@@ -16,8 +16,8 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#08060f",
-          backgroundImage: "linear-gradient(135deg, #2a1259 0%, #08060f 55%)",
+          backgroundColor: "#0a0a0b",
+          backgroundImage: "linear-gradient(135deg, #2b2b2f 0%, #0a0a0b 55%)",
           color: "#ededf2",
           fontFamily: "sans-serif",
         }}
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
               width: 72,
               height: 72,
               borderRadius: 20,
-              backgroundImage: "linear-gradient(135deg, #7c3aed, #a855f7)",
+              backgroundImage: "linear-gradient(135deg, #3f3f46, #a1a1aa)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -41,7 +41,7 @@ export default function OpengraphImage() {
           </div>
           <div style={{ display: "flex", fontSize: 40, fontWeight: 700 }}>
             <span>System</span>
-            <span style={{ color: "#c4b5fd" }}>.agent</span>
+            <span style={{ color: "#d4d4d8" }}>.agent</span>
           </div>
         </div>
 
