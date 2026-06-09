@@ -20,8 +20,8 @@ export const siteConfig = {
   description:
     "System.agent le da a tu concesionaria una web profesional, un agente de IA que atiende WhatsApp, Instagram y Messenger como un humano, y un panel donde ves cada lead, conversación y venta.",
 
-  // Dominio final (conectado en Vercel → nic.ar)
-  url: "https://systemagent.com.ar",
+  // Dominio final (conectado en Vercel → nic.ar). Principal: www (apex redirige a www).
+  url: "https://www.systemagent.com.ar",
 
   // --- CONTACTO (PLACEHOLDERS — reemplazar) ---
   // WhatsApp en formato internacional sin "+", ej. Argentina: 54911XXXXXXXX
