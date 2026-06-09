@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ============================================================
+   IDENTIDAD DE MARCA — System.agent
+   Cambiá el violeta en UN solo lugar (estas variables).
+   Cuando tengas el HEX exacto de tus redes, reemplazá --brand.
+   ============================================================ */
+:root {
+  --brand: #7c3aed;        /* violeta principal */
+  --brand-2: #a855f7;      /* violeta/fucsia secundario (para gradientes) */
+  --brand-soft: #c4b5fd;   /* violeta claro (detalles / texto sobre oscuro) */
+  --brand-ink: #ffffff;    /* texto que va ARRIBA del violeta */
+
+  /* Base oscura premium */
+  --bg: #08060f;
+  --bg-soft: #0d0a1a;
+  --surface: #131023;
+  --text: #ededf2;
+  --muted: #a39fb5;
+  --line: rgba(255, 255, 255, 0.09);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--brand) 45%, transparent);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-20 sm:py-28;
+  }
+  .font-display {
+    font-family: var(--font-display), var(--font-inter), sans-serif;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium tracking-wide text-brand-soft;
+  }
+
+  /* Base compartida de botones (sin referenciar otra clase de componente) */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+  .btn-primary {
+    @apply bg-brand text-brand-ink shadow-lg shadow-brand/30 hover:brightness-110 hover:shadow-brand/50;
+  }
+  .btn-secondary {
+    @apply border border-white/15 bg-white/[0.04] text-text hover:bg-white/10;
+  }
+  .btn-ghost {
+    @apply text-text hover:text-brand-soft;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition duration-300;
+  }
+  .card-hover {
+    @apply hover:border-brand/40 hover:bg-white/[0.05];
+  }
+
+  .h2 {
+    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    font-family: var(--font-display), var(--font-inter), sans-serif;
+  }
+  .lead {
+    @apply text-lg leading-relaxed text-muted;
+  }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
