@@ -10,7 +10,15 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 8);
+        ticking = false;
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -32,7 +40,7 @@ export default function Navbar() {
     >
       <nav className="container-x flex h-16 items-center justify-between">
         <a href="/" aria-label="System Agency Solutions — inicio">
-          <Logo />
+          <Logo priority />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

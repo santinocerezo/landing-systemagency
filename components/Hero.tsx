@@ -1,7 +1,6 @@
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
-import { siteConfig, waLink, waMessages } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 import ChatMock, { type ChatMessage } from "./ChatMock";
-import Reveal from "./Reveal";
 
 const heroChat: ChatMessage[] = [
   { from: "them", text: "Hola, vi la Amarok que tenían. Sigue disponible? 🤔", time: "12:30" },
@@ -38,76 +37,66 @@ export default function Hero() {
       />
 
       <div className="container-x grid items-center gap-12 pb-20 sm:pb-28 lg:grid-cols-[1.05fr_0.95fr]">
-        {/* Columna texto */}
+        {/* Columna texto — renderizada al instante (es el LCP, sin animación que dependa de JS) */}
         <div>
-          <Reveal>
-            <span className="eyebrow">
-              <Sparkles size={14} className="text-brand-soft" />
-              Sistema de ventas con IA para concesionarias
+          <span className="eyebrow">
+            <Sparkles size={14} className="text-brand-soft" />
+            Sistema de ventas con IA para concesionarias
+          </span>
+
+          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.07] tracking-tight sm:text-5xl lg:text-6xl">
+            Tu negocio{" "}
+            <span className="bg-gradient-to-r from-brand-soft via-brand to-brand-2 bg-clip-text text-transparent">
+              vende y responde solo
             </span>
-          </Reveal>
+            , las 24 horas.
+          </h1>
 
-          <Reveal delay={60}>
-            <h1 className="mt-5 font-display text-4xl font-bold leading-[1.07] tracking-tight sm:text-5xl lg:text-6xl">
-              Tu negocio{" "}
-              <span className="bg-gradient-to-r from-brand-soft via-brand to-brand-2 bg-clip-text text-transparent">
-                vende y responde solo
-              </span>
-              , las 24 horas.
-            </h1>
-          </Reveal>
+          <p className="lead mt-6 max-w-xl">
+            Le ponemos a tu negocio una web profesional, un agente de IA que atiende WhatsApp,
+            Instagram y Messenger <span className="text-text">como un humano</span>, y un panel
+            donde ves cada lead, conversación y venta. Vos publicás un auto desde WhatsApp; nosotros
+            lo mostramos en todos lados.
+          </p>
 
-          <Reveal delay={120}>
-            <p className="lead mt-6 max-w-xl">
-              Le ponemos a tu negocio una web profesional, un agente de IA que atiende WhatsApp,
-              Instagram y Messenger <span className="text-text">como un humano</span>, y un panel
-              donde ves cada lead, conversación y venta. Vos publicás un auto desde WhatsApp; nosotros
-              lo mostramos en todos lados.
-            </p>
-          </Reveal>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#agenda" className="btn-primary">
+              Agendá una demo
+              <ArrowRight size={18} />
+            </a>
+            <a
+              href={siteConfig.demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <PlayCircle size={18} />
+              Ver demo en vivo
+            </a>
+          </div>
 
-          <Reveal delay={180}>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#agenda" className="btn-primary">
-                Agendá una demo
-                <ArrowRight size={18} />
-              </a>
-              <a
-                href={siteConfig.demo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                <PlayCircle size={18} />
-                Ver demo en vivo
-              </a>
-            </div>
-          </Reveal>
-
-          <Reveal delay={240}>
-            <p className="mt-6 text-sm text-muted">
-              <span className="text-brand-soft">●</span> Demo real funcionando:{" "}
-              <a
-                href={siteConfig.demo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-text underline-offset-4 hover:underline"
-              >
-                {siteConfig.demo.name}
-              </a>{" "}
-              — atendido por su agente de IA.
-            </p>
-          </Reveal>
+          <p className="mt-6 text-sm text-muted">
+            <span className="text-brand-soft">●</span> Demo real funcionando:{" "}
+            <a
+              href={siteConfig.demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-text underline-offset-4 hover:underline"
+            >
+              {siteConfig.demo.name}
+            </a>{" "}
+            — atendido por su agente de IA.
+          </p>
         </div>
 
         {/* Columna chat */}
-        <Reveal delay={160} className="relative mx-auto w-full max-w-sm lg:max-w-md">
+        <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
           <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand/20 to-transparent blur-2xl" />
           <ChatMock messages={heroChat} status="escribiendo…" />
           <div className="absolute -bottom-4 -left-4 hidden rounded-xl border border-white/10 bg-surface/90 px-3 py-2 text-xs text-muted backdrop-blur sm:block">
             <span className="font-semibold text-text">Responde en segundos</span> · sin que muevas un dedo
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

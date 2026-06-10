@@ -9,7 +9,15 @@ export default function WhatsAppFab() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 400);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setShow(window.scrollY > 400);
+        ticking = false;
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -25,7 +33,7 @@ export default function WhatsAppFab() {
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
-      <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-[#25D366] opacity-20" />
+      <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-[#25D366] opacity-20 motion-reduce:animate-none" />
       <WhatsAppIcon size={24} />
       <span className="hidden text-sm sm:inline">Escribinos</span>
     </a>

@@ -9,9 +9,16 @@ type LogoProps = {
   size?: number;
   /** Mostrar el wordmark "System Agency Solutions" al lado del isotipo. */
   withWordmark?: boolean;
+  /** Precargar la imagen (solo para el logo above-the-fold del navbar). */
+  priority?: boolean;
 };
 
-export default function Logo({ className = "", size = 38, withWordmark = true }: LogoProps) {
+export default function Logo({
+  className = "",
+  size = 38,
+  withWordmark = true,
+  priority = false,
+}: LogoProps) {
   const width = Math.round(size * LOGO_RATIO);
   return (
     <span className={`inline-flex items-center gap-3 ${className}`}>
@@ -20,7 +27,7 @@ export default function Logo({ className = "", size = 38, withWordmark = true }:
         alt="System Agency Solutions"
         width={width}
         height={size}
-        priority
+        priority={priority}
         sizes={`${size}px`}
         style={{ height: size, width }}
       />

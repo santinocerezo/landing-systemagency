@@ -16,7 +16,7 @@ const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -64,6 +64,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${display.variable}`}>
+      <head>
+        {/* Adelanta el handshake con Calendly para que el iframe de la agenda cargue más rápido */}
+        <link rel="preconnect" href="https://calendly.com" />
+        <link rel="preconnect" href="https://assets.calendly.com" />
+      </head>
       <body className="min-h-screen antialiased">
         <Navbar />
         <main>{children}</main>
