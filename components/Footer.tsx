@@ -32,9 +32,9 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-muted transition hover:border-brand/40 hover:text-brand-soft"
+                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-muted transition hover:border-brand/40 hover:text-brand-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                   >
-                    <Icon size={17} />
+                    <Icon size={17} aria-hidden="true" />
                   </a>
                 );
               })}
@@ -43,17 +43,17 @@ export default function Footer() {
 
           {/* Navegación */}
           <div>
-            <h4 className="text-sm font-semibold text-text">Navegación</h4>
+            <h2 className="text-sm font-semibold text-text">Navegación</h2>
             <ul className="mt-4 space-y-2.5">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-sm text-muted transition hover:text-text">
+                  <a href={l.href} className="link-focus text-sm text-muted transition hover:text-text">
                     {l.label}
                   </a>
                 </li>
               ))}
               <li>
-                <a href="/#agenda" className="text-sm text-muted transition hover:text-text">
+                <a href="/#agenda" className="link-focus text-sm text-muted transition hover:text-text">
                   Agendá una demo
                 </a>
               </li>
@@ -62,14 +62,14 @@ export default function Footer() {
 
           {/* Contacto */}
           <div>
-            <h4 className="text-sm font-semibold text-text">Contacto</h4>
+            <h2 className="text-sm font-semibold text-text">Contacto</h2>
             <ul className="mt-4 space-y-3">
               <li>
                 <a
                   href={waLink(waMessages.footer)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
+                  className="link-focus flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
                 >
                   <WhatsAppIcon size={16} className="text-brand-soft" />
                   WhatsApp
@@ -78,9 +78,9 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
+                  className="link-focus flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
                 >
-                  <Mail size={16} className="text-brand-soft" />
+                  <Mail size={16} className="text-brand-soft" aria-hidden="true" />
                   {siteConfig.email}
                 </a>
               </li>
@@ -90,9 +90,9 @@ export default function Footer() {
                     href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
+                    className="link-focus flex items-center gap-2.5 text-sm text-muted transition hover:text-text"
                   >
-                    <Instagram size={16} className="text-brand-soft" />
+                    <Instagram size={16} className="text-brand-soft" aria-hidden="true" />
                     {siteConfig.social.instagramHandle}
                   </a>
                 </li>
@@ -106,10 +106,10 @@ export default function Footer() {
             © {year} {siteConfig.name}. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-5 text-xs text-muted">
-            <a href="/privacidad" className="transition hover:text-text">
+            <a href="/privacidad" className="link-focus transition hover:text-text">
               Privacidad
             </a>
-            <a href="/terminos" className="transition hover:text-text">
+            <a href="/terminos" className="link-focus transition hover:text-text">
               Términos
             </a>
           </div>

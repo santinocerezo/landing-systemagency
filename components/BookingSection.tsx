@@ -10,14 +10,14 @@ const perks = [
   "Te respondemos todas las dudas",
 ];
 
-/** Construye la URL del embed de Calendly con el theme violeta. */
+/** Construye la URL del embed de Calendly con el theme de marca (azul eléctrico). */
 function calendlyEmbedSrc(url: string): string {
   const sep = url.includes("?") ? "&" : "?";
   const params = new URLSearchParams({
     hide_gdpr_banner: "1",
-    background_color: "131023",
-    text_color: "ededf2",
-    primary_color: "7c3aed",
+    background_color: "141414",
+    text_color: "f5f5f5",
+    primary_color: "146bff",
   });
   return `${url}${sep}${params.toString()}`;
 }
@@ -38,13 +38,13 @@ export default function BookingSection() {
               <iframe
                 src={calendlyEmbedSrc(siteConfig.bookingUrl)}
                 title="Agendá una demo con System.agent"
-                className="h-[720px] w-full"
+                className="h-[68svh] max-h-[720px] min-h-[460px] w-full"
                 loading="lazy"
               />
             </div>
           ) : (
             <div className="card flex flex-col items-center gap-6 p-8 text-center sm:p-10">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
+              <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
                 <CalendarClock size={26} />
               </span>
               <div>
@@ -57,7 +57,7 @@ export default function BookingSection() {
               <ul className="flex flex-col gap-2 text-sm text-muted sm:flex-row sm:gap-6">
                 {perks.map((p) => (
                   <li key={p} className="flex items-center gap-2">
-                    <Check size={15} className="text-brand-soft" />
+                    <Check size={15} className="text-brand-soft" aria-hidden="true" />
                     {p}
                   </li>
                 ))}

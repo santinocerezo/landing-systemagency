@@ -1,4 +1,4 @@
-import { Camera, Database, Megaphone, BookOpen, Globe } from "lucide-react";
+import { Database, Megaphone, BookOpen, Globe } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
@@ -49,7 +49,7 @@ export default function Automation() {
             {steps.map((s, i) => (
               <Reveal key={s.title} delay={i * 90} className="relative">
                 <div className="flex flex-col items-center text-center">
-                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-surface text-brand-soft shadow-lg shadow-brand/10">
+                  <span aria-hidden="true" className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-brand/30 bg-surface text-brand-soft shadow-lg shadow-brand/10">
                     {s.icon}
                     <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand text-[11px] font-bold text-brand-ink">
                       {i + 1}

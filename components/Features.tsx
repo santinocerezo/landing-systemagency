@@ -52,17 +52,17 @@ export default function Features() {
           subtitle="No es una herramienta más. Es el equipo de ventas digital completo de tu concesionaria, funcionando solo."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 [&_.card]:p-5">
           {features.map((f, i) => {
             const Icon = f.icon;
             return (
               <Reveal key={f.title} delay={(i % 3) * 80}>
                 <div className="card card-hover h-full">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
-                    <Icon size={20} />
+                  <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
+                    <Icon size={18} />
                   </span>
-                  <h3 className="mt-5 text-lg font-semibold text-text">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{f.desc}</p>
+                  <h3 className="mt-4 text-base font-semibold text-text">{f.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{f.desc}</p>
                 </div>
               </Reveal>
             );

@@ -19,7 +19,10 @@ const heroChat: ChatMessage[] = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 sm:pt-32">
+    <section
+      id="top"
+      className="relative flex min-h-svh flex-col justify-center snap-start overflow-hidden pb-10 pt-24"
+    >
       {/* Glows de fondo */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-[-10%] h-[480px] w-[680px] -translate-x-1/2 rounded-full bg-brand/25 blur-[120px]" />
@@ -36,20 +39,20 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-x grid items-center gap-12 pb-20 sm:pb-28 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container-x grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Columna texto — renderizada al instante (es el LCP, sin animación que dependa de JS) */}
         <div>
           <span className="eyebrow">
-            <Sparkles size={14} className="text-brand-soft" />
+            <Sparkles size={14} className="text-brand-soft" aria-hidden="true" />
             Sistema de ventas con IA para concesionarias
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.07] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-[1.07] tracking-tight sm:text-5xl lg:text-6xl">
             Tu negocio{" "}
             <span className="bg-gradient-to-r from-brand-soft via-brand to-brand-2 bg-clip-text text-transparent">
               vende y responde solo
             </span>
-            , las 24 horas.
+            , las 24&nbsp;horas.
           </h1>
 
           <p className="lead mt-6 max-w-xl">
@@ -62,7 +65,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#agenda" className="btn-primary">
               Agendá una demo
-              <ArrowRight size={18} />
+              <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a
               href={siteConfig.demo.url}
@@ -70,18 +73,18 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              <PlayCircle size={18} />
+              <PlayCircle size={18} aria-hidden="true" />
               Ver demo en vivo
             </a>
           </div>
 
           <p className="mt-6 text-sm text-muted">
-            <span className="text-brand-soft">●</span> Demo real funcionando:{" "}
+            <span className="text-brand-soft" aria-hidden="true">●</span> Demo real funcionando:{" "}
             <a
               href={siteConfig.demo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-text underline-offset-4 hover:underline"
+              className="font-medium text-text underline-offset-4 hover:underline focus:outline-none focus-visible:underline"
             >
               {siteConfig.demo.name}
             </a>{" "}

@@ -12,7 +12,7 @@ export default function CTASection() {
             <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-brand/30 blur-[100px]" />
             <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-brand-2/30 blur-[100px]" />
 
-            <h2 className="relative font-display text-3xl font-bold tracking-tight sm:text-5xl">
+            <h2 className="relative text-balance font-display text-3xl font-bold tracking-tight sm:text-5xl">
               ¿Listo para que tu negocio
               <br className="hidden sm:block" /> venda solo?
             </h2>
@@ -23,7 +23,7 @@ export default function CTASection() {
             <div className="relative mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href="#agenda" className="btn-primary">
                 Agendá una demo
-                <ArrowRight size={18} />
+                <ArrowRight size={18} aria-hidden="true" />
               </a>
               <a
                 href={waLink(waMessages.pricing)}

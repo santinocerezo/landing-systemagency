@@ -12,7 +12,7 @@ export default function TerminosPage() {
       <h1 className="font-display text-3xl font-bold sm:text-4xl">Términos y Condiciones</h1>
       <p className="mt-3 text-sm text-muted">Última actualización: 9 de junio de 2026</p>
 
-      <div className="mt-8 space-y-6 text-muted [&_h2]:mt-8 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-text [&_a]:text-brand-soft">
+      <div className="mt-8 space-y-6 text-muted [&_h2]:mt-8 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-text [&_a]:text-brand-soft [&_a]:underline [&_a]:underline-offset-2">
         <p>
           Al utilizar el sitio y los servicios de {siteConfig.name} aceptás los siguientes términos y
           condiciones. Te recomendamos leerlos con atención.

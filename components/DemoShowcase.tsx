@@ -26,13 +26,14 @@ export default function DemoShowcase() {
               href={siteConfig.demo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block overflow-hidden rounded-xl border border-white/10 bg-[#0b0b0c] shadow-2xl shadow-black/40 transition hover:border-brand/40"
+              aria-label={`Abrir la demo en vivo de ${siteConfig.demo.name} en una pestaña nueva`}
+              className="group relative block overflow-hidden rounded-xl border border-white/10 bg-[#0b0b0c] shadow-2xl shadow-black/40 transition hover:border-brand/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
             >
               <div className="flex items-center gap-2 border-b border-white/10 bg-[#161618] px-4 py-3">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-                <span className="ml-3 flex-1 truncate rounded-md bg-black/30 px-3 py-1 text-xs text-muted">
+                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+                <span className="h-3 w-3 rounded-full bg-[#febc2e]" aria-hidden="true" />
+                <span className="h-3 w-3 rounded-full bg-[#28c840]" aria-hidden="true" />
+                <span className="ml-3 min-w-0 flex-1 truncate rounded-md bg-black/30 px-3 py-1 text-xs text-muted">
                   {siteConfig.demo.url.replace("https://", "")}
                 </span>
               </div>
@@ -43,7 +44,7 @@ export default function DemoShowcase() {
                   <p className="mt-2 text-sm text-muted">Web + catálogo + agente de IA</p>
                   <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition group-hover:bg-white/20">
                     Abrir demo
-                    <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight size={16} aria-hidden="true" className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
               </div>
@@ -56,7 +57,7 @@ export default function DemoShowcase() {
                 {bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-muted">
                     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 text-brand-soft">
-                      <Check size={13} />
+                      <Check size={13} aria-hidden="true" />
                     </span>
                     <span className="text-text">{b}</span>
                   </li>
@@ -69,7 +70,7 @@ export default function DemoShowcase() {
                 className="btn-primary mt-8"
               >
                 Ver demo en vivo
-                <ExternalLink size={16} />
+                <ExternalLink size={16} aria-hidden="true" />
               </a>
             </div>
           </div>

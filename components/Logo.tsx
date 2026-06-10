@@ -32,7 +32,7 @@ export default function Logo({
         style={{ height: size, width }}
       />
       {withWordmark && (
-        <span className="flex flex-col leading-none">
+        <span className="flex flex-col leading-none" translate="no">
           <span className="font-display text-[1.02rem] font-semibold leading-none tracking-tight text-text">
             System Agency
           </span>

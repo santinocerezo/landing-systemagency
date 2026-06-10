@@ -24,6 +24,7 @@ export default function ChatMock({
 }: ChatMockProps) {
   return (
     <div
+      aria-hidden="true"
       className={`overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b141a] shadow-2xl shadow-black/50 ${className}`}
     >
       {/* Header */}
@@ -32,7 +33,7 @@ export default function ChatMock({
           SA
         </span>
         <div className="leading-tight">
-          <p className="text-sm font-semibold text-white">{title}</p>
+          <p className="text-sm font-semibold text-white" translate="no">{title}</p>
           <p className="text-xs text-emerald-400">{status}</p>
         </div>
       </div>

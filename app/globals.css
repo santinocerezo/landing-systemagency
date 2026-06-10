@@ -62,8 +62,12 @@
 
 @layer base {
   html {
+    color-scheme: dark;
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    /* Cada sección ocupa el viewport entero y el scroll "imanta" a la más
+       cercana → cada pantallazo es una sola sección, sin ver la de arriba/abajo. */
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 0;
   }
   body {
     background-color: var(--bg);
@@ -89,6 +93,15 @@
     background: color-mix(in oklab, var(--brand) 55%, transparent);
     color: #fff;
   }
+  /* Elementos táctiles: sin delay de doble-tap ni flash gris en móviles. */
+  a,
+  button,
+  [role="button"],
+  label,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }
 
 @layer components {
@@ -96,7 +109,10 @@
     @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
   }
   .section {
-    @apply py-20 sm:py-28;
+    /* Pantalla completa: llena el viewport y centra su contenido verticalmente.
+       El pt mayor a la altura del navbar (4rem) evita que el contenido alto
+       quede tapado por la barra fija. */
+    @apply flex min-h-svh flex-col justify-center snap-start pt-20 pb-12;
   }
   .font-display {
     font-family: var(--font-display), var(--font-inter), sans-serif;
@@ -143,11 +159,16 @@
   }
 
   .h2 {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    @apply text-3xl font-bold tracking-tight text-balance sm:text-4xl;
     font-family: var(--font-display), var(--font-inter), sans-serif;
   }
   .lead {
-    @apply text-lg leading-relaxed text-muted;
+    @apply text-lg leading-relaxed text-pretty text-muted;
+  }
+
+  /* Foco visible reutilizable para links de texto / íconos (ring azul). */
+  .link-focus {
+    @apply rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
   }
 
   /* Texto con gradiente azul eléctrico */
@@ -205,5 +226,15 @@
   }
   html {
     scroll-behavior: auto;
+  }
+  /* Neutraliza cualquier animación/transición (ping del FAB, hovers con scale,
+     translate de flechas, etc.) para usuarios que piden menos movimiento. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

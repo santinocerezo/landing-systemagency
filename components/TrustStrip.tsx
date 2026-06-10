@@ -23,7 +23,7 @@ export default function TrustStrip() {
           <div className="flex items-center gap-5">
             {channels.map((c) => (
               <span key={c.label} className="flex items-center gap-2 text-sm font-medium text-text">
-                <span className="text-brand-soft">{c.icon}</span>
+                <span className="text-brand-soft" aria-hidden="true">{c.icon}</span>
                 {c.label}
               </span>
             ))}
@@ -33,7 +33,7 @@ export default function TrustStrip() {
         <Reveal delay={80} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {props.map((p) => (
             <span key={p.text} className="flex items-center gap-2 text-sm text-muted">
-              <span className="text-brand">{p.icon}</span>
+              <span className="text-brand" aria-hidden="true">{p.icon}</span>
               {p.text}
             </span>
           ))}

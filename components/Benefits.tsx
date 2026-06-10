@@ -64,7 +64,7 @@ export default function Benefits() {
               return (
                 <Reveal key={b.title} delay={150 + i * 70}>
                   <div className="flex gap-3.5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
+                    <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
                       <Icon size={18} />
                     </span>
                     <div>

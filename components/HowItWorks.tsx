@@ -39,7 +39,7 @@ export default function HowItWorks() {
             return (
               <Reveal key={s.step} delay={i * 100}>
                 <div className="card card-hover h-full">
-                  <div className="flex items-center justify-between">
+                  <div aria-hidden="true" className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/15 text-brand-soft ring-1 ring-brand/20">
                       <Icon size={20} />
                     </span>

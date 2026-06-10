@@ -57,7 +57,7 @@ export default function AgentSpotlight() {
               return (
                 <Reveal key={c.text} delay={150 + i * 60}>
                   <li className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-sm text-text">
-                    <Icon size={15} className="text-brand-soft" />
+                    <Icon size={15} className="text-brand-soft" aria-hidden="true" />
                     {c.text}
                   </li>
                 </Reveal>

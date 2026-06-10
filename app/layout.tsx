@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import ScrollManager from "@/components/ScrollManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,8 +71,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://assets.calendly.com" />
       </head>
       <body className="min-h-screen antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:border focus:border-brand/40 focus:bg-surface focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-text focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-bg"
+        >
+          Saltar al contenido
+        </a>
+        <ScrollManager />
         <Navbar />
-        <main>{children}</main>
+        <main id="main" tabIndex={-1} className="focus:outline-none">
+          {children}
+        </main>
         <Footer />
         <WhatsAppFab />
       </body>

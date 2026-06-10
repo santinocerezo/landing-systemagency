@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-x flex h-16 items-center justify-between">
-        <a href="/" aria-label="System Agency Solutions — inicio">
+        <a href="/" aria-label="System Agency Solutions — inicio" className="link-focus">
           <Logo priority />
         </a>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted transition hover:text-text"
+                className="link-focus text-sm text-muted transition hover:text-text"
               >
                 {link.label}
               </a>
@@ -65,24 +65,25 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-text md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg md:hidden"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </nav>
 
       {/* Menú mobile */}
       {open && (
-        <div className="border-t border-white/10 bg-bg/95 backdrop-blur-md md:hidden">
+        <div id="mobile-menu" className="overscroll-contain border-t border-white/10 bg-bg/95 backdrop-blur-md md:hidden">
           <ul className="container-x flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base text-muted transition hover:bg-white/5 hover:text-text"
+                  className="block rounded-lg px-3 py-3 text-base text-muted transition hover:bg-white/5 hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand"
                 >
                   {link.label}
                 </a>
