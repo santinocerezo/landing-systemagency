@@ -15,6 +15,9 @@ function calendlyEmbedSrc(url: string): string {
   const sep = url.includes("?") ? "&" : "?";
   const params = new URLSearchParams({
     hide_gdpr_banner: "1",
+    // Oculta el panel de detalles del evento → menos contenido interno, sin scroll propio.
+    hide_event_type_details: "1",
+    hide_landing_page_details: "1",
     background_color: "141414",
     text_color: "f5f5f5",
     primary_color: "146bff",
@@ -32,13 +35,13 @@ export default function BookingSection() {
           subtitle="Te mostramos el sistema funcionando y armamos un plan para tu negocio. Elegí el día y horario que mejor te quede."
         />
 
-        <Reveal delay={80} className="mx-auto mt-12 max-w-3xl">
+        <Reveal delay={80} className="mx-auto mt-8 max-w-3xl">
           {hasBooking ? (
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-2xl shadow-black/30">
               <iframe
                 src={calendlyEmbedSrc(siteConfig.bookingUrl)}
                 title="Agendá una demo con System.agent"
-                className="h-[68svh] max-h-[720px] min-h-[460px] w-full"
+                className="h-[80svh] max-h-[820px] min-h-[700px] w-full"
                 loading="lazy"
               />
             </div>

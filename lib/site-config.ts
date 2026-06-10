@@ -30,7 +30,7 @@ export const siteConfig = {
 
   // --- AGENDA (Calendly) ---
   // Si queda vacío, la sección de agenda muestra un fallback a WhatsApp.
-  bookingUrl: "https://calendly.com/systemagencia1/1h-demo-meeting",
+  bookingUrl: "https://calendly.com/systemagencia1/reunion-presentacion-de-demo",
 
   // --- REDES (PLACEHOLDERS — reemplazar) ---
   social: {
