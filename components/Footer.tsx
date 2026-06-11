@@ -2,6 +2,9 @@ import { Mail, Instagram, Facebook, Linkedin } from "lucide-react";
 import { siteConfig, navLinks, waLink, waMessages } from "@/lib/site-config";
 import Logo from "./Logo";
 import WhatsAppIcon from "./WhatsAppIcon";
+import LegalModalLink from "./LegalModalLink";
+import PrivacidadContent from "./legal/PrivacidadContent";
+import TerminosContent from "./legal/TerminosContent";
 
 const year = new Date().getFullYear();
 
@@ -106,12 +109,12 @@ export default function Footer() {
             © {year} {siteConfig.name}. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-5 text-xs text-muted">
-            <a href="/privacidad" className="link-focus transition hover:text-text">
-              Privacidad
-            </a>
-            <a href="/terminos" className="link-focus transition hover:text-text">
-              Términos
-            </a>
+            <LegalModalLink href="/privacidad" label="Privacidad">
+              <PrivacidadContent as="h2" />
+            </LegalModalLink>
+            <LegalModalLink href="/terminos" label="Términos">
+              <TerminosContent as="h2" />
+            </LegalModalLink>
           </div>
         </div>
       </div>
