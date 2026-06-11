@@ -39,7 +39,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-x flex h-16 items-center justify-between">
-        <a href="/" aria-label="System Agency Solutions — inicio" className="link-focus">
+        <a href="/" aria-label="System Agent Solutions — inicio" className="link-focus">
           <Logo priority />
         </a>
 

@@ -7,7 +7,7 @@ type LogoProps = {
   className?: string;
   /** Alto del isotipo en px. */
   size?: number;
-  /** Mostrar el wordmark "System Agency Solutions" al lado del isotipo. */
+  /** Mostrar el wordmark "System Agent Solutions" al lado del isotipo. */
   withWordmark?: boolean;
   /** Precargar la imagen (solo para el logo above-the-fold del navbar). */
   priority?: boolean;
@@ -24,7 +24,7 @@ export default function Logo({
     <span className={`inline-flex items-center gap-3 ${className}`}>
       <Image
         src="/logo-mark.png"
-        alt="System Agency Solutions"
+        alt="System Agent Solutions"
         width={width}
         height={size}
         priority={priority}
@@ -34,7 +34,7 @@ export default function Logo({
       {withWordmark && (
         <span className="flex flex-col leading-none" translate="no">
           <span className="font-display text-[1.02rem] font-semibold leading-none tracking-tight text-text">
-            System Agency
+            System Agent
           </span>
           <span className="mt-1 font-display text-[0.62rem] font-semibold uppercase leading-none tracking-[0.32em] text-brand">
             Solutions
