@@ -50,11 +50,6 @@ export default function TerminosContent({ as: Heading = "h1" }: { as?: "h1" | "h
           Ante cualquier consulta sobre estos términos, escribinos a{" "}
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.
         </p>
-
-        <p className="text-xs">
-          Este texto es una plantilla orientativa y debería ser revisado por un profesional legal antes
-          de su publicación definitiva.
-        </p>
       </div>
     </>
   );
