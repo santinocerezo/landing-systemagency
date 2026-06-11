@@ -35,7 +35,7 @@ export const siteConfig = {
   social: {
     instagram: "https://instagram.com/system.agent",
     instagramHandle: "@system.agent",
-    facebook: "",
+    facebook: "https://www.facebook.com/systemagentsolutions/",
     tiktok: "",
     linkedin: "",
   },
