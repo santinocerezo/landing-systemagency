@@ -6,7 +6,6 @@
  * ============================================================
  *
  *  PENDIENTE de reemplazar por los datos reales:
- *   - whatsappNumber  (formato internacional, sin "+" ni espacios)
  *   - email
  *   - bookingUrl      (link de tu evento de Calendly)
  *   - social.*        (handles / URLs de redes)
@@ -23,9 +22,9 @@ export const siteConfig = {
   // Dominio final (conectado en Vercel → nic.ar). Principal: www (apex redirige a www).
   url: "https://www.systemagent.com.ar",
 
-  // --- CONTACTO (PLACEHOLDERS — reemplazar) ---
-  // WhatsApp en formato internacional sin "+", ej. Argentina: 54911XXXXXXXX
-  whatsappNumber: "5491112345678",
+  // --- CONTACTO ---
+  // WhatsApp en formato internacional sin "+" (Argentina: 549 + área + número)
+  whatsappNumber: "5491138670679",
   email: "hola@system.agent",
 
   // --- AGENDA (Calendly) ---
