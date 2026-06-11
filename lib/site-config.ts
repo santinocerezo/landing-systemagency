@@ -44,7 +44,7 @@ export const siteConfig = {
   // --- DEMO REAL EN VIVO ---
   demo: {
     name: "Sarandí Cars",
-    url: "https://sarandicars-landing.fly.dev/",
+    url: "https://sarandicars.com.ar/",
     agentName: "Sofía",
   },
 } as const;
