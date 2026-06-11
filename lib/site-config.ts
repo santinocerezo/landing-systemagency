@@ -4,12 +4,6 @@
  *  Cambiá acá los datos de contacto, redes y links.
  *  (El color de acento gris se cambia en app/globals.css → --brand)
  * ============================================================
- *
- *  PENDIENTE de reemplazar por los datos reales:
- *   - email
- *   - bookingUrl      (link de tu evento de Calendly)
- *   - social.*        (handles / URLs de redes)
- *   - url             (dominio final cuando lo tengas)
  */
 
 export const siteConfig = {
@@ -25,7 +19,7 @@ export const siteConfig = {
   // --- CONTACTO ---
   // WhatsApp en formato internacional sin "+" (Argentina: 549 + área + número)
   whatsappNumber: "5491138670679",
-  email: "hola@system.agent",
+  email: "systemagentsolutions@gmail.com",
 
   // --- AGENDA (Calendly) ---
   // Si queda vacío, la sección de agenda muestra un fallback a WhatsApp.
